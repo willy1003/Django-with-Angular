@@ -33,6 +33,16 @@ CORS_ORGIN_WHITELIST =(
 
 )
 
+REST_FRAMEWORK = {
+    
+    'DEFAULT_AUTHENTICATION_CLASSES' : (
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+        ),
+        'DEFAULT_PERMISSION_CLASSES' : (
+            'rest_framework.permissions.AllowAny',
+        ),
+}
 
 # Application definition
 
@@ -73,6 +83,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
             ],
+            'debug' : DEBUG,
         },
     },
 ]
